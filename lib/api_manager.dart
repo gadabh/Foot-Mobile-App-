@@ -5,6 +5,12 @@ import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart'; // Ajoute l'import pour intl
 
 class SoccerApi {
+
+
+
+  final String baseUrl = "https://v3.football.api-sports.io"; // Base URL
+  final String apiKey = "b6092bfc723bac88cfe76465cf7b46e2"; // Replace with your API key
+
   // API headers
   static const Map<String, String> headers = {
     'x-rapidapi-host': "v3.football.api-sports.io",
@@ -57,10 +63,6 @@ class SoccerApi {
 
 
 
-
-  final String baseUrl = "https://v3.football.api-sports.io"; // Base URL
-  final String apiKey = "b6092bfc723bac88cfe76465cf7b46e2"; // Replace with your API key
-
   // Get today's matches
   Future<List<dynamic>> getTodayMatches() async {
   final String today = DateTime.now().toIso8601String().split('T')[0]; // Get today's date in YYYY-MM-DD format
@@ -110,7 +112,12 @@ class SoccerApi {
   }
 
 
-  // Récupérer les matchs du jour
+
+final String baseUrl = "https://v3.football.api-sports.io"; // Base URL
+final String apiKey = "b6092bfc723bac88cfe76465cf7b46e2"; // Replace with your API key
+
+
+// Récupérer les matchs du jour
   Future<List<dynamic>> getTodayMatches() async {
   final String today = DateTime.now().toIso8601String().split('T')[0]; // Date au format YYYY-MM-DD
   final response = await http.get(
